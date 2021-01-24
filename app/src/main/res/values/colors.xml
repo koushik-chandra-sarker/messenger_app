@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#0c9e4e</color>
+    <color name="colorPrimary">#fcefee</color>
+    <color name="colorSecondary">#fcefee</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="whats_app_color">#fff</color>
+    <color name="lightGray">#EDEDED</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray">#746E6D</color>
+    <color name="bg_setting_1">#F4F6FB</color>
+</resources>

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "349100235072",
+    "firebase_url": "https://fb-clone-c5069-default-rtdb.firebaseio.com",
+    "project_id": "fb-clone-c5069",
+    "storage_bucket": "fb-clone-c5069.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349100235072:android:78fcce786babebbabd02a5",
+        "android_client_info": {
+          "package_name": "bd.edu.seu.firebaserealtimedatabase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349100235072-1n9unkmm9rc8p787uajd42ksskumk5ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8hYKOhC2RLMggbRP2s4FK6-sHj0-pl58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349100235072-1n9unkmm9rc8p787uajd42ksskumk5ek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349100235072:android:f15175769c600331bd02a5",
+        "android_client_info": {
+          "package_name": "bd.edu.seu.messengerapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349100235072-1n9unkmm9rc8p787uajd42ksskumk5ek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8hYKOhC2RLMggbRP2s4FK6-sHj0-pl58"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349100235072-1n9unkmm9rc8p787uajd42ksskumk5ek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
