@@ -50,6 +50,7 @@ public class ChatFragment extends Fragment {
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         binding.userChatRecycleView.setLayoutManager(layoutManager);
 
+        //get all users from database and set in chatFragment
         database.getReference().child("messenger_app").child("Users").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

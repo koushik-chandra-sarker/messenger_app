@@ -1,7 +1,7 @@
 package bd.edu.seu.messengerapp.Firebase.Entity;
 
 public class User {
-    String userName, password, userId, email, profilePic, lastMessage;
+    String userName, password, userId, email, profilePic, lastMessage,token;
     String about = "";
 
     public User() {
@@ -29,6 +29,17 @@ public class User {
         this.email = email;
         this.profilePic = profilePic;
         this.lastMessage = lastMessage;
+        this.about = about;
+    }
+
+    public User(String userName, String password, String userId, String email, String profilePic, String lastMessage, String token, String about) {
+        this.userName = userName;
+        this.password = password;
+        this.userId = userId;
+        this.email = email;
+        this.profilePic = profilePic;
+        this.lastMessage = lastMessage;
+        this.token = token;
         this.about = about;
     }
 
@@ -86,5 +97,13 @@ public class User {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 }

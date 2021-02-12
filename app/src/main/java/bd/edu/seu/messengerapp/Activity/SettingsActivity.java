@@ -133,6 +133,8 @@ public class SettingsActivity extends AppCompatActivity {
                     }).show();
 
         });
+
+        //Update About
         binding.btnEditAbout.setOnClickListener(v -> {
             editText.setText(binding.tvAbout.getText().toString());
             new AlertDialog.Builder(SettingsActivity.this)

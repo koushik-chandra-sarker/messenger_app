@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -78,7 +79,8 @@ public class SignInPresenterImpl implements SignInPresenter.Modal {
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
-                Log.w("TAG", "Google sign in failed", e);
+                Log.e("MyTag", "Google sign in failed", e);
+                Toast.makeText(activity, "Google sign in failed",Toast.LENGTH_LONG).show();
                 // ...
             }
         }

@@ -17,7 +17,16 @@
         android:elevation="3dp"
         >
     </androidx.appcompat.widget.Toolbar>
-
+    <TextView
+        android:id="@+id/tv_connectivityWarning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Waiting for Network..."
+        android:gravity="center"
+        android:textColor="#F44336"
+        android:elevation="2dp"
+        />
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"

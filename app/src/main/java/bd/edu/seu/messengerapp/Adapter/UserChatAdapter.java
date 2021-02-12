@@ -52,11 +52,15 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHo
             intent.putExtra("userId", user.getUserId());
             intent.putExtra("userProfilePic", user.getProfilePic());
             intent.putExtra("username", user.getUserName());
+            intent.putExtra("receiverToken", user.getToken());
             context.startActivity(intent);
         });
+
+
+        // get last message and set on user list
         FirebaseDatabase.getInstance().getReference("messenger_app").child("Chats")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid() + user.getUserId())
-                .orderByChild("timestamp")
+                .orderByChild("userId").equalTo(user.getUserId())
                 .limitToLast(1)
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

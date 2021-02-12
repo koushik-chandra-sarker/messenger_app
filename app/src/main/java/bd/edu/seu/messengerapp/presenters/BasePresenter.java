@@ -8,7 +8,7 @@ public interface BasePresenter {
         void showProgressBar( String message);
         void hideProgressBar();
     }
-    interface MessageInterface{
+    interface CommonView {
         void onSuccess();
         void onError(String... message);
     }

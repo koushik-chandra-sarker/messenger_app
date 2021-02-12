@@ -1,8 +1,6 @@
 package bd.edu.seu.messengerapp.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -10,17 +8,11 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
-import bd.edu.seu.messengerapp.Adapter.MessageAdapter;
 import bd.edu.seu.messengerapp.Firebase.Entity.Message;
 import bd.edu.seu.messengerapp.R;
 import bd.edu.seu.messengerapp.databinding.ActivityMessageBinding;
@@ -28,7 +20,9 @@ import bd.edu.seu.messengerapp.presenterImpls.MessagePresenterImpl;
 import bd.edu.seu.messengerapp.presenters.BasePresenter;
 import bd.edu.seu.messengerapp.presenters.MessagePresenter;
 
-public class MessageActivity extends AppCompatActivity implements BasePresenter.MessageInterface {
+import static bd.edu.seu.messengerapp.Activity.MainActivity.*;
+
+public class MessageActivity extends AppCompatActivity implements BasePresenter.CommonView {
 
 
     ActivityMessageBinding binding;
@@ -50,16 +44,19 @@ public class MessageActivity extends AppCompatActivity implements BasePresenter.
         presenterModel  = new MessagePresenterImpl(this,this);
 
         final String senderId = auth.getUid();
+
+        //get from previous intent
         final String receiverId = getIntent().getStringExtra("userId");
         final String username = getIntent().getStringExtra("username");
         String profilePic = getIntent().getStringExtra("userProfilePic");
+        String receiverToken = getIntent().getStringExtra("receiverToken");
         // declare ChatId
         final String senderChatId = senderId + receiverId;
         final String receiverChatId = receiverId + senderId;
 
-        //  set receiver username in chatDetailActivity
+        //  set receiver username in messageActivity
         binding.tvUsernameChatDetail.setText(username);
-        // set receiver user profile pic in chatDetailActivity
+        // set receiver user profile pic in messageActivity
         Picasso.get().load(profilePic).placeholder(R.drawable.user_icon).into(binding.profileImageChatDetail);
 
 
@@ -84,6 +81,8 @@ public class MessageActivity extends AppCompatActivity implements BasePresenter.
             final Message message = new Message(senderId, messageFromUi, new Date().getTime());
             binding.etMessage.setText("");
             presenterModel.sendMessage(message,senderChatId,receiverChatId);
+
+            presenterModel.sendNotification(currentUser, messageFromUi,receiverToken);
         });
 
     }

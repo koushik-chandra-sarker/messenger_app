@@ -134,7 +134,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         googleSignInClient = GoogleSignIn.getClient(this,gso);
 
         Intent signInIntent = googleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+        startActivityForResult(signInIntent, RC_SIGN_IN); // see onActivityResult-> singInWithEmailGoogle
     }
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
