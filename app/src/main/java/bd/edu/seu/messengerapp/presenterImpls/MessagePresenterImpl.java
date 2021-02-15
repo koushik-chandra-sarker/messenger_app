@@ -85,7 +85,7 @@ public class MessagePresenterImpl implements MessagePresenter.Model {
         FCMApiService fcmApiService = Client.getClient("https://fcm.googleapis.com/").create(FCMApiService.class);
         fcmApiService.sendNotification(sender).enqueue(new Callback<Response>() {
             @Override
-            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response){
                 if (response.code() == 200){
                     if (response.body().success != 1){
                         Toast.makeText(context,"Notification sent Faield", Toast.LENGTH_SHORT).show();

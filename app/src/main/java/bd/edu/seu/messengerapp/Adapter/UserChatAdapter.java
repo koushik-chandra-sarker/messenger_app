@@ -21,17 +21,23 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import bd.edu.seu.messengerapp.Activity.MessageActivity;
+import bd.edu.seu.messengerapp.Database.Entity.UserSqlite;
 import bd.edu.seu.messengerapp.Firebase.Entity.User;
 import bd.edu.seu.messengerapp.R;
 import bd.edu.seu.messengerapp.util.TimeStampConverter;
 
 public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHolder> {
 
-    List<User> users;
+//    List<User> users;
+    List<UserSqlite> userSqlites;
     Context context;
 
-    public UserChatAdapter(List<User> users, Context context) {
-        this.users = users;
+//    public UserChatAdapter(List<User> users, Context context) {
+//        this.users = users;
+//        this.context = context;
+//    }
+    public UserChatAdapter(List<UserSqlite> users, Context context) {
+        this.userSqlites = users;
         this.context = context;
     }
 
@@ -44,7 +50,8 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        User user = users.get(position);
+//        User user = users.get(position);
+        UserSqlite user = userSqlites.get(position);
         Picasso.get().load(user.getProfilePic()).placeholder(R.drawable.user_icon).into(holder.profilePic);
         holder.username.setText(user.getUserName());
         holder.itemView.setOnClickListener(v -> {
@@ -84,7 +91,7 @@ public class UserChatAdapter extends RecyclerView.Adapter<UserChatAdapter.ViewHo
 
     @Override
     public int getItemCount() {
-        return users.size();
+        return userSqlites.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
